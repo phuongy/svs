@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'react-emotion';
-import moment from 'moment'
+import moment from 'moment';
 
-const CLIENT_TIME = new Date();
-const WORLD_TIME = moment().utcOffset(-2);
+import { CLIENT_TIME, WORLD_TIME } from '../constants';
+
 const EVENTS = [
   {
     name: 'Gathering Event',
@@ -213,22 +213,17 @@ export class SVSCalculator extends Component {
 
     return (
       <div>
-        <header>
-          <p>local time: {moment(CLIENT_TIME).format('llll')}</p>
-          <p>game time: {moment(WORLD_TIME).format()}</p>
-        </header>
-        <main>
-          <Events>
-            {EVENTS.map((event, index) => (
-              <Event key={`option-${index}`}>
-                <Day>{this.getDateOfNextEvent(event).format('dddd')}</Day>
-                <Icon>{event.icon && (<event.icon />)}</Icon>
-                <Name>{event.name}</Name>
-                <Duration>{this.getTimeTillNextEvent(event)}</Duration>
-              </Event>
-            ))}
-          </Events>
-        </main>
+        <h2>SVS Calendar</h2>
+        <Events>
+          {EVENTS.map((event, index) => (
+            <Event key={`option-${index}`}>
+              <Day>{this.getDateOfNextEvent(event).format('dddd')}</Day>
+              <Icon>{event.icon && (<event.icon />)}</Icon>
+              <Name>{event.name}</Name>
+              <Duration>{this.getTimeTillNextEvent(event)}</Duration>
+            </Event>
+          ))}
+        </Events>
       </div>
     )
   }
