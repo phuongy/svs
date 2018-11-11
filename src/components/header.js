@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 
 import { CLIENT_TIME, WORLD_TIME, CONTENT_WIDTH } from '../constants'
 
@@ -22,6 +22,8 @@ const HeaderWrapper = styled.header`
 
 const Content = styled.div`
   display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .875rem;
   margin: 0 auto;
   max-width: ${CONTENT_WIDTH};
   padding: 0.33rem 0.5rem;
