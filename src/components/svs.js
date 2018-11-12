@@ -110,10 +110,15 @@ const Event = styled.div`
   display: flex;
   flex-direction: column;
   font-size: .875rem;
-  margin: 0.5rem;
-  min-width: 10rem;
-  padding: 1rem;
+  margin: 0.33rem;
+  min-width: 9rem;
+  padding: 1rem 0.5rem;
   text-align: center;
+
+  @media (min-width: 360px) {
+    margin: 0.5rem;
+    min-width: 10rem;
+  }
 `;
 
 const Name = styled.div`
@@ -125,16 +130,26 @@ const Icon = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 4rem;
+  height: 2.5rem;
   margin-bottom: 1rem;
+
+  @media (min-width: 360px) {
+    height: 4rem;
+  }
+
+  svg {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const Day = styled.div`
   font-size: 1.1rem;
-  /* font-weight: 600; */
   margin-bottom: 1rem;
 `;
 
 const Duration = styled.div`
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.15rem;
 `;
