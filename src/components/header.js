@@ -11,7 +11,7 @@ class Header extends React.Component {
     return (
       <HeaderWrapper>
         <Content>
-          {serverTime && <div>Server time: {serverTime.format()}</div>}
+          {serverTime && <div>Server time: {serverTime.format('llll')}</div>}
         </Content>
       </HeaderWrapper>
     )
@@ -21,8 +21,9 @@ class Header extends React.Component {
 export default Header
 
 const HeaderWrapper = styled.header`
-  background: #000;
+  background: #3D3D3F;
   color: #fff;
+  font-size: 0.75rem;
 `
 
 const Content = styled.div`

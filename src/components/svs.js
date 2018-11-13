@@ -23,7 +23,7 @@ export class SVSCalculator extends Component {
     setInterval(() => {
       this.updateTimers();
       this.props.updateServerTime();
-    }, 1000);
+    }, 30000);
   }
 
   updateTimers = () => {
@@ -65,7 +65,7 @@ export class SVSCalculator extends Component {
     return current.add(30, 'minutes'); // offset 30 minutes for reset
   }
 
-  getFormattedDuration = ({ days, hours, minutes, seconds }) => `${days > 0 ? `${days}d ` : ''}${hours}:${minutes > 9 ? minutes : `0${minutes}`}:${seconds > 9 ? seconds : `0${seconds}`}`;
+  getFormattedDuration = ({ days, hours, minutes, seconds }) => `${days > 0 ? `${days}d ` : ''}${hours}h ${minutes}m`;
 
   getTimeTillNextEvent = event => {
     const { now } = this.state;
