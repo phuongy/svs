@@ -2,16 +2,21 @@ import React from 'react'
 import styled from 'react-emotion'
 // import { Link } from 'gatsby'
 
-import { CLIENT_TIME, WORLD_TIME, CONTENT_WIDTH } from '../constants'
+import { CONTENT_WIDTH } from '../constants'
 
-const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
-    <Content>
-      <div>local time: {CLIENT_TIME.format('llll')}</div>
-      <div>game time: {WORLD_TIME.format()}</div>
-    </Content>
-  </HeaderWrapper>
-)
+class Header extends React.Component {
+  render() {
+    const { serverTime } = this.props;
+
+    return (
+      <HeaderWrapper>
+        <Content>
+          {serverTime && <div>Server time: {serverTime.format()}</div>}
+        </Content>
+      </HeaderWrapper>
+    )
+  }
+}
 
 export default Header
 

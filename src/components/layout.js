@@ -9,7 +9,7 @@ import { CONTENT_WIDTH } from '../constants'
 
 import './layout.css'
 
-const Layout = ({ children }) => (
+const Layout = ({ serverTime, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header serverTime={serverTime} />
         <Main>
           {children}
         </Main>
@@ -45,5 +45,5 @@ export default Layout
 const Main = styled.main`
   margin: 0 auto;
   max-width: ${CONTENT_WIDTH};
-  padding: 2rem 0.5rem;
+  padding: 1rem;
 `

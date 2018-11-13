@@ -4,6 +4,11 @@ import moment from 'moment';
 
 import { WORLD_TIME, EVENTS } from '../constants';
 
+const PRIMARY_TEXT = '#3D3D3F';
+const BACKGROUND = '#F0F0F0';
+const ALT1 = '#FF532B';
+const ALT2 = '#3D3D3F';
+
 export class SVSCalculator extends Component {
   constructor(props) {
     super(props)
@@ -16,7 +21,8 @@ export class SVSCalculator extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      this.updateTimers()
+      this.updateTimers();
+      this.props.updateServerTime();
     }, 1000);
   }
 
@@ -80,22 +86,33 @@ export class SVSCalculator extends Component {
 
   render() {
     return (
-      <div>
+      <Wrapper>
         <h2>SVS Calendar</h2>
         <Events>
-          {EVENTS.map((event, index) => (
-            <Event key={`option-${index}`}>
-              <Day>{this.getDateOfNextEvent(event).format('dddd')}</Day>
-              <Icon>{event.icon && (<event.icon />)}</Icon>
-              <Name>{event.name}</Name>
-              <Duration>{this.getTimeTillNextEvent(event)}</Duration>
-            </Event>
-          ))}
+          {EVENTS.map((event, index) => {
+            const day = this.getDateOfNextEvent(event).format('dddd');
+            const duration = this.getTimeTillNextEvent(event);
+            const isCurrent = duration === 'Now';
+            const props = { isCurrent };
+
+            return (
+              <Event key={`option-${index}`} {...props}>
+                <Day {...props}>{day}</Day>
+                <Icon {...props}>{event.icon && (<event.icon />)}</Icon>
+                <Name {...props}>{event.name}</Name>
+                <Duration {...props}>{duration}</Duration>
+              </Event>
+            )
+          })}
         </Events>
-      </div>
+      </Wrapper>
     )
   }
 }
+
+const Wrapper = styled.div`
+  color: ${PRIMARY_TEXT};
+`
 
 const Events = styled.div`
   display: flex;
@@ -105,51 +122,81 @@ const Events = styled.div`
 `;
 
 const Event = styled.div`
-  border: 1.5px solid #000;
+  border: 1.5px solid ${p => p.isCurrent ? ALT1 : PRIMARY_TEXT};
   border-radius: 6px;
   display: flex;
+  flex: 0 0 calc(50% - .66rem);
   flex-direction: column;
   font-size: .875rem;
   margin: 0.33rem;
-  min-width: 9rem;
-  padding: 1rem 0.5rem;
+  min-width: 8rem;
+  padding: 0.75rem 0.5rem;
   text-align: center;
 
   @media (min-width: 360px) {
+    /* flex: 0 0 calc(50% - 1rem); */
+    /* margin: 0.5rem; */
+    /* min-width: 10rem; */
+  }
+
+  @media (min-width: 420px) {
+    flex: 0 0 calc(50% - 1rem);
     margin: 0.5rem;
     min-width: 10rem;
+  }
+
+  @media (min-width: 600px) {
+    flex: 0 0 auto;
   }
 `;
 
 const Name = styled.div`
+  color: ${p => p.isCurrent ? ALT1 : PRIMARY_TEXT};
   font-size: .875rem;
   font-weight: 600;
+  margin: 0.5rem 0 0;
 `;
 
 const Icon = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
-  height: 2.5rem;
-  margin-bottom: 1rem;
+  height: 1.4rem;
+  margin: 0.33rem 0;
 
   @media (min-width: 360px) {
+    height: 2.8rem;
+  }
+
+  @media (min-width: 380px) {
     height: 4rem;
   }
 
   svg {
-    object-fit: contain;
-    height: 100%;
-    width: 100%;
+    transform: scale(0.6);
+
+    @media (min-width: 360px) {
+      transform: scale(0.8);
+    }
+
+    @media (min-width: 380px) {
+      transform: scale(1);
+    }
+  }
+
+  svg path, svg circle, svg polygon {
+    fill: ${p => p.isCurrent ? ALT1 : PRIMARY_TEXT};
   }
 `;
 
 const Day = styled.div`
+  color: ${p => p.isCurrent ? ALT1 : PRIMARY_TEXT};
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin: 0 0 0.33rem
 `;
 
 const Duration = styled.div`
+  color: ${p => p.isCurrent ? ALT1 : PRIMARY_TEXT};
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 `;
