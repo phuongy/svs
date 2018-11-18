@@ -1,5 +1,5 @@
 import React from 'react'
-import { SVSCalculator } from '../components/svs'
+import { SVSCalculator } from '../components/SVS'
 
 import Layout from '../components/layout'
 

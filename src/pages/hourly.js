@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import moment from 'moment';
-import { SVSCalculator } from '../components/SVS'
+import { Hourly } from '../components/Hourly'
 
 import Layout from '../components/layout'
 
-class IndexPage extends Component {
+class HourlyPage extends Component {
   constructor(props) {
     super(props);
 
@@ -22,10 +22,10 @@ class IndexPage extends Component {
 
     return (
       <Layout serverTime={serverTime}>
-        <SVSCalculator updateServerTime={this.updateServerTime} />
+        <Hourly updateServerTime={this.updateServerTime} />
       </Layout>
     )
   }
 }
 
-export default IndexPage
+export default HourlyPage
