@@ -8,6 +8,10 @@ const ALT2 = '#3D3D3F';
 export const Wrapper = styled.div`
   color: ${PRIMARY_TEXT};
 
+  strong.current-hour {
+    color: ${ALT1};
+  }
+
   ul {
     /* margin: 0; */
     padding: 0;

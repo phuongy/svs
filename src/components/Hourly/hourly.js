@@ -44,8 +44,7 @@ export class Hourly extends React.Component {
       <Wrapper>
         {upcomingEvents.map((x, index) => (
           <React.Fragment>
-            {currentClientHour === x.mytime && <strong>Now </strong>}
-            {currentClientHour !== x.mytime && <strong>{x.mytime} </strong>}
+            <strong className={currentClientHour === x.mytime ? 'current-hour' : ''}>{x.mytime} </strong>
             <small>({x.gametime} ST)</small><br />
             <ul>
               {x.events.map(y => <li>{y.desc}</li>)}

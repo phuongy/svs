@@ -5,7 +5,7 @@ const TES = { name: 'Tech SU', desc: 'Every 1 min of technology speed-up items u
 const TR = { name: 'Train', desc: 'Training', points: 0 };
 const TRS = { name: 'Train SU', desc: 'Every 1 min of training speed-up items used', points: 0 };
 const H = { name: 'Hero daily', desc: 'Hero daily', points: 0 };
-const ASU = { name: 'Any SU', desc: 'All speed-up items', points: 0 };
+const ASU = { name: 'Any SU', desc: 'Any speed-up items', points: 0 };
 const EVENTS = [BU, TE, TR];
 const SU = [BUS, TE, TRS];
 
