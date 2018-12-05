@@ -1,10 +1,25 @@
 import React from 'react';
+import moment from 'moment';
 import { WORLD_TIME, CLIENT_TIME } from '../../constants';
 import EVENTS from './data';
 import { Wrapper } from './styles';
 import { now } from 'moment';
 
 export class Hourly extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      now: CLIENT_TIME
+    }
+  }
+  componentDidMount() {
+    setInterval(() => {
+      this.updateTimers();
+      this.props.updateServerTime();
+    }, 30000);
+  }
+
   getDayIndex = () => WORLD_TIME.format('d');
 
   getHour = time => (offset = 0) => {
@@ -14,7 +29,7 @@ export class Hourly extends React.Component {
 
   getWorldTimeHour = this.getHour(WORLD_TIME);
 
-  getClientTimeHour = this.getHour(CLIENT_TIME);
+  getClientTimeHour = this.getHour(moment());
 
   getUpcomingEvents = hour => {
     const dayIndex = this.getDayIndex();
