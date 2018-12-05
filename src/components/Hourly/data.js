@@ -110,7 +110,7 @@ const THURSDAY_EVENTS = [
   { time: '7:00', events: [AHD] },
 
   { time: '8:00', events: [HRZ] },
-  { time: '9:00', events: [ADH] },
+  { time: '9:00', events: [AHD] },
   { time: '10:00', events: [WMZ] },
   { time: '11:00', events: [AHD] },
   { time: '12:00', events: [HRW] },
