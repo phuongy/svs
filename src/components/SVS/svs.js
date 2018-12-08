@@ -88,7 +88,7 @@ export class SVSCalculator extends Component {
           {EVENTS.map((event, index) => {
             const day = this.getDateOfNextEvent(event).format('dddd');
             const duration = this.getTimeTillNextEvent(event);
-            const isCurrent = duration === 'Now';
+            const isCurrent = false;//duration === 'Now';
             const props = { isCurrent };
 
             return (
