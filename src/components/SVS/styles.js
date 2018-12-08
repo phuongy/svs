@@ -17,7 +17,7 @@ export const Events = styled.div`
 `;
 
 export const Event = styled.div`
-  border: 1.5px solid ${p => p.isCurrent ? ALT1 : PRIMARY_TEXT};
+  border: 1.5px solid ${PRIMARY_TEXT};
   border-radius: 6px;
   display: flex;
   flex: 0 0 calc(50% - .66rem);

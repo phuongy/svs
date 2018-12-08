@@ -16,10 +16,10 @@ export class SVSCalculator extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
-      this.updateTimers();
-      this.props.updateServerTime();
-    }, 30000);
+    // setInterval(() => {
+    this.updateTimers();
+    this.props.updateServerTime();
+    // }, 30000);
   }
 
   updateTimers = () => {
