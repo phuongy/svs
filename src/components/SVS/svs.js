@@ -5,7 +5,7 @@ import { WORLD_TIME } from '../../constants';
 import { EVENTS } from './data';
 import { Wrapper, Events, Event, Day, Icon, Name, Duration } from './styles';
 
-export class SVSCalculator extends Component {
+export class SVSCalendar extends Component {
   constructor(props) {
     super(props)
 
@@ -83,7 +83,6 @@ export class SVSCalculator extends Component {
   render() {
     return (
       <Wrapper>
-        <h2>SVS Calendar</h2>
         <Events>
           {EVENTS.map((event, index) => {
             const day = this.getDateOfNextEvent(event).format('dddd');

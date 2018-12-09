@@ -6,12 +6,13 @@ import { CONTENT_WIDTH } from '../constants'
 
 class Header extends React.Component {
   render() {
-    const { serverTime } = this.props;
+    const { title, serverTime } = this.props;
 
     return (
       <HeaderWrapper>
         <Content>
-          {serverTime && <div>Server time: {serverTime.format('llll')}</div>}
+          <h2>{title}</h2>
+          {serverTime && <div>{serverTime.format('llll')}</div>}
         </Content>
       </HeaderWrapper>
     )
@@ -21,19 +22,21 @@ class Header extends React.Component {
 export default Header
 
 const HeaderWrapper = styled.header`
-  background: #3D3D3F;
-  color: #fff;
   font-size: 0.75rem;
+  padding: 1rem 1rem 0;
 `
 
 const Content = styled.div`
+  align-items: flex-start;
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   font-size: .875rem;
   margin: 0 auto;
-  max-width: ${CONTENT_WIDTH};
-  padding: 0.33rem 0.5rem;
   width: 100%;
+
+  h2 {
+    margin: 0 1rem 0 0;
+  }
 
   div {
     flex: 1;

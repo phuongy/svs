@@ -4,7 +4,7 @@ import { SVSCalculator } from '../components/SVS'
 import Layout from '../components/layout'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout title="SVS Calendar">
     <SVSCalculator />
   </Layout>
 )

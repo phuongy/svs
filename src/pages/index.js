@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment';
-import { SVSCalculator } from '../components/SVS'
+import { SVSCalendar } from '../components/SVS'
 
 import Layout from '../components/layout'
 
@@ -21,8 +21,8 @@ class IndexPage extends Component {
     const { serverTime } = this.state;
 
     return (
-      <Layout serverTime={serverTime}>
-        <SVSCalculator updateServerTime={this.updateServerTime} />
+      <Layout title="State vs State" serverTime={serverTime}>
+        <SVSCalendar updateServerTime={this.updateServerTime} />
       </Layout>
     )
   }

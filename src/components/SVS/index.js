@@ -1,3 +1,3 @@
-import { SVSCalculator } from './svs';
+import { SVSCalendar } from './svs';
 
-export { SVSCalculator };
+export { SVSCalendar };
