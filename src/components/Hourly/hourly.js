@@ -3,7 +3,7 @@ import moment from 'moment';
 import { WORLD_TIME, CLIENT_TIME } from '../../constants';
 import EVENTS from './data';
 import { Wrapper } from './styles';
-import { now } from 'moment';
+// import { now } from 'moment';
 
 export class Hourly extends React.Component {
   constructor(props) {

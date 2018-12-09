@@ -25,7 +25,7 @@ const Layout = ({ title, serverTime, children }) => (
         <Helmet
           title="Last Shelter :: SvS Calendar"
           meta={[
-            { name: 'description', content: 'Timers to help you plan your build / research / gathering etc for the State vs State events in game.' }, ,
+            { name: 'description', content: 'Timers to help you plan your build / research / gathering etc for the State vs State events in game.' },
           ]}
         >
           <html lang="en" />

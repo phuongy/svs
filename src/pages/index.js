@@ -21,7 +21,7 @@ class IndexPage extends Component {
     const { serverTime } = this.state;
 
     return (
-      <Layout title="State vs State" serverTime={serverTime}>
+      <Layout title="Clash of Zones" serverTime={serverTime}>
         <SVSCalendar updateServerTime={this.updateServerTime} />
       </Layout>
     )

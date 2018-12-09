@@ -9,7 +9,6 @@ const WMZ = { name: 'Wisdom Medals & Zombies', desc: 'Wisdom Medals & Zombies', 
 const HRW = { name: 'Hero Recruitment & Wisdom Medals', desc: 'Hero Recruitment & Wisdom Medals', points: 0 };
 const AHD = { name: 'All Hero Development', desc: 'All Hero Development', points: 0 };
 const ASU = { name: 'Any SU', desc: 'Any speed-up items', points: 0 };
-const EVENTS = [BU, TE, TR];
 const SU = [BUS, TE, TRS];
 
 const MONDAY_EVENTS = [

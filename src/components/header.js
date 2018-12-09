@@ -1,8 +1,5 @@
 import React from 'react'
 import styled from 'react-emotion'
-// import { Link } from 'gatsby'
-
-import { CONTENT_WIDTH } from '../constants'
 
 class Header extends React.Component {
   render() {
