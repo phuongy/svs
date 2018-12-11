@@ -48,7 +48,7 @@ const TUESDAY_EVENTS = [
   { time: '4:00', events: [BU, TE] },
   { time: '5:00', events: [BU, BUS] },
   { time: '6:00', events: [BU, TE] },
-  { time: '7:00', events: [BU, TE, TR] },
+  { time: '7:00', events: [TR] },
 
   { time: '8:00', events: [BU] },
   { time: '9:00', events: [BU, TE, TRS] },
